@@ -1,0 +1,76 @@
+/**
+ * Mock business data for component preview.
+ * Uses Picsum Photos (stable seeds) for realistic imagery.
+ */
+import type { BusinessJson } from '@/types';
+
+export const MOCK_DATA: BusinessJson = {
+  business: {
+    name: 'אינסטלטור דוד כהן',
+    name_en: 'David Cohen Plumbing Services',
+    site_lang: 'he',
+    phone: '0501234567',
+    phone_display: '050-123-4567',
+    whatsapp: '972501234567',
+    website: 'https://example.com',
+    rating: 4.9,
+    reviews_count: 127,
+    address_he: 'רחוב הרצל 12, תל אביב',
+    address_en: '12 Herzl Street, Tel Aviv',
+    category_he: 'אינסטלציה ושרברבות',
+    category_en: 'Plumber & Sanitation',
+    maps_url: 'https://maps.google.com/?q=32.0853,34.7818',
+    thumbnail: 'https://picsum.photos/seed/biz-thumb/400/400',
+    logo_emoji: 'Wrench',
+    logo_url: 'https://picsum.photos/seed/biz-logo/200/200',
+    geo: { latitude: 32.0853, longitude: 34.7818 },
+    schema_type: 'Plumber',
+    price_range: 'moderate',
+    full_address: '12 Herzl Street, Tel Aviv, Israel',
+  },
+  hours: [
+    { day_key: 'sunday',    day_he: 'ראשון',  day_en: 'Sunday',    hours_he: '8:00 - 20:00', hours_en: '8 am–8 pm',   is_open: true  },
+    { day_key: 'monday',    day_he: 'שני',    day_en: 'Monday',    hours_he: '8:00 - 20:00', hours_en: '8 am–8 pm',   is_open: true  },
+    { day_key: 'tuesday',   day_he: 'שלישי', day_en: 'Tuesday',   hours_he: '8:00 - 20:00', hours_en: '8 am–8 pm',   is_open: true  },
+    { day_key: 'wednesday', day_he: 'רביעי', day_en: 'Wednesday', hours_he: '8:00 - 20:00', hours_en: '8 am–8 pm',   is_open: true  },
+    { day_key: 'thursday',  day_he: 'חמישי', day_en: 'Thursday',  hours_he: '8:00 - 20:00', hours_en: '8 am–8 pm',   is_open: true  },
+    { day_key: 'friday',    day_he: 'שישי',  day_en: 'Friday',    hours_he: '8:00 - 14:00', hours_en: '8 am–2 pm',   is_open: true  },
+    { day_key: 'saturday',  day_he: 'שבת',   day_en: 'Saturday',  hours_he: 'סגור',          hours_en: 'Closed',      is_open: false },
+  ],
+  services: [
+    { id: '1', icon: 'Droplets',  title_he: 'תיקון דליפות ונזילות',     title_en: 'Leak Repairs',          desc_he: 'פתרונות מהירים לכל סוגי הנזילות בצנרת הביתית שלך', desc_en: 'Fast solutions for all types of pipe leaks in your home' },
+    { id: '2', icon: 'ShowerHead', title_he: 'התקנת ברזים ומיקסרים',    title_en: 'Faucet Installation',   desc_he: 'התקנה מקצועית של ברזים וידיות ערבוב מכל הסוגים',    desc_en: 'Professional installation of faucets and mixers of all types' },
+    { id: '3', icon: 'Bath',      title_he: 'תיקון שירותים ואמבטיות', title_en: 'Bathroom Repairs',      desc_he: 'שירותי תיקון ושיפוץ מלאים לחדרי רחצה ושירותים',       desc_en: 'Complete repair and renovation services for bathrooms and toilets' },
+    { id: '4', icon: 'Flame',      title_he: 'דוודי שמש וגז',           title_en: 'Water Heaters',         desc_he: 'התקנה ותחזוקה של דוודי שמש, גז וחשמל',                desc_en: 'Installation and maintenance of solar, gas, and electric water heaters' },
+    { id: '5', icon: 'Waves',      title_he: 'סתימות בניקוז',           title_en: 'Drain Unclogging',      desc_he: 'פתיחת סתימות ושיחזור ביוב מקצועי ויעיל',              desc_en: 'Professional drain and sewer unclogging' },
+    { id: '6', icon: 'HardHat',    title_he: 'שיפוץ צנרת',              title_en: 'Pipe Renovation',       desc_he: 'החלפה ושיפוץ מלא של מערכות צנרת ישנות',               desc_en: 'Full replacement and renovation of aging pipe systems' },
+  ],
+  reviews: [
+    { author: 'יוסי לוי',       rating: 5, text_he: 'שירות מצוין! הגיע במהירות, תיקן את הנזילה בצורה מקצועית. מאוד ממליץ!', text_en: 'Excellent service! Arrived quickly, fixed the leak professionally. Highly recommend!', date: 'לפני שבוע',    is_local_guide: false },
+    { author: 'Rachel Cohen',    rating: 5, text_he: 'Super professional and friendly. Fixed our bathroom issue quickly and at a fair price.',    text_en: 'Super professional and friendly. Fixed our bathroom issue quickly and at a fair price.',    date: '2 weeks ago', is_local_guide: true  },
+    { author: 'מיכל אברהם',    rating: 5, text_he: 'דוד הגיע תוך שעה, עבד נקי ומסודר. המחיר היה הוגן. בהחלט אשתמש שוב!', text_en: 'David arrived within an hour, worked clean and tidy. Fair price. Will definitely use again!', date: 'לפני חודש',   is_local_guide: false },
+    { author: 'Noam Shapiro',    rating: 4, text_he: 'Very good service. Arrived on time and knew exactly what he was doing.',                    text_en: 'Very good service. Arrived on time and knew exactly what he was doing.',                    date: '2 months ago',is_local_guide: false },
+    { author: 'שרה גולדברג',  rating: 5, text_he: 'הטוב ביותר! פתר את הבעיה שלנו בצנרת שאחרים לא הצליחו. תודה רבה!', text_en: 'The best! Solved our pipe issue that others could not. Thank you!', date: 'לפני 3 חודשים',is_local_guide: true  },
+    { author: 'Daniel Mizrahi',  rating: 5, text_he: 'Amazing job unclogging our drain. Honest pricing and great communication.', text_en: 'Amazing job unclogging our drain. Honest pricing and great communication.', date: '3 months ago', is_local_guide: false },
+  ],
+  photos: [
+    { url: 'https://picsum.photos/seed/plumb1/800/600', thumb: 'https://picsum.photos/seed/plumb1/400/300', source: 'customer', alt_he: 'עבודת אינסטלציה - 1', alt_en: 'Plumbing work - 1' },
+    { url: 'https://picsum.photos/seed/plumb2/800/600', thumb: 'https://picsum.photos/seed/plumb2/400/300', source: 'customer', alt_he: 'עבודת אינסטלציה - 2', alt_en: 'Plumbing work - 2' },
+    { url: 'https://picsum.photos/seed/plumb3/800/600', thumb: 'https://picsum.photos/seed/plumb3/400/300', source: 'customer', alt_he: 'עבודת אינסטלציה - 3', alt_en: 'Plumbing work - 3' },
+    { url: 'https://picsum.photos/seed/plumb4/800/600', thumb: 'https://picsum.photos/seed/plumb4/400/300', source: 'customer', alt_he: 'עבודת אינסטלציה - 4', alt_en: 'Plumbing work - 4' },
+    { url: 'https://picsum.photos/seed/plumb5/800/600', thumb: 'https://picsum.photos/seed/plumb5/400/300', source: 'customer', alt_he: 'עבודת אינסטלציה - 5', alt_en: 'Plumbing work - 5' },
+    { url: 'https://picsum.photos/seed/plumb6/800/600', thumb: 'https://picsum.photos/seed/plumb6/400/300', source: 'customer', alt_he: 'עבודת אינסטלציה - 6', alt_en: 'Plumbing work - 6' },
+    { url: 'https://picsum.photos/seed/plumb7/800/600', thumb: 'https://picsum.photos/seed/plumb7/400/300', source: 'customer', alt_he: 'עבודת אינסטלציה - 7', alt_en: 'Plumbing work - 7' },
+    { url: 'https://picsum.photos/seed/plumb8/800/600', thumb: 'https://picsum.photos/seed/plumb8/400/300', source: 'customer', alt_he: 'עבודת אינסטלציה - 8', alt_en: 'Plumbing work - 8' },
+  ],
+  translations: {},
+  design: {
+    hero_layout: 'centered',
+    card_style: 'shadow',
+    button_style: 'rounded',
+    hero_pattern: 'circles',
+    gallery_style: 'masonry',
+    section_style: 'standard',
+    animation_style: 'elegant',
+  },
+};

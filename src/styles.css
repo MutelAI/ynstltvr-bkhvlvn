@@ -1,0 +1,124 @@
+@import 'tailwindcss';
+
+/* ─── 21st.dev component animations ─── */
+
+/* AuroraBackground */
+@keyframes aurora {
+  from { background-position: 50% 50%, 50% 50%; }
+  to   { background-position: 350% 50%, 350% 50%; }
+}
+
+/* BackgroundGradientAnimation blobs */
+@keyframes moveHorizontal {
+  0%   { transform: translateX(-50%) translateY(-10%); }
+  50%  { transform: translateX(50%) translateY(10%); }
+  100% { transform: translateX(-50%) translateY(-10%); }
+}
+@keyframes moveInCircle {
+  0%   { transform: rotate(0deg); }
+  50%  { transform: rotate(180deg); }
+  100% { transform: rotate(360deg); }
+}
+@keyframes moveVertical {
+  0%   { transform: translateY(-50%); }
+  50%  { transform: translateY(50%); }
+  100% { transform: translateY(-50%); }
+}
+
+@theme {
+  /* AuroraBackground */
+  --animate-aurora: aurora 60s linear infinite;
+
+  /* BackgroundGradientAnimation */
+  --animate-gradient-first:  moveVertical   30s ease    infinite;
+  --animate-gradient-second: moveInCircle   20s reverse infinite;
+  --animate-gradient-third:  moveInCircle   40s linear  infinite;
+  --animate-gradient-fourth: moveHorizontal 40s ease    infinite;
+  --animate-gradient-fifth:  moveInCircle   20s ease    infinite;
+}
+
+/* ─── Root ─── */
+:root {
+  --font-he: 'Heebo', 'Arial Hebrew', Arial, sans-serif;
+  --font-en: 'Inter', system-ui, Arial, sans-serif;
+  /* --font-heading and --font-body are injected per-site by the generator */
+  --font-heading: var(--font-en);
+  --font-body: var(--font-en);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+/* ─── Direction-aware font ─── */
+[dir='rtl'] {
+  font-family: var(--font-he);
+}
+[dir='ltr'] {
+  font-family: var(--font-en);
+}
+
+/* ─── Heading font from design system ─── */
+[dir='ltr'] h1,
+[dir='ltr'] h2,
+[dir='ltr'] h3,
+[dir='ltr'] h4 {
+  font-family: var(--font-heading);
+}
+
+/* ─── Global reset ─── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-he);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+  color: #111827;
+  background-color: #ffffff;
+}
+
+/* ─── Text overflow prevention (global) ─── */
+/* Headings: break long words/names rather than overflow */
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  word-break: break-word;
+  min-width: 0;
+}
+
+/* Body text: soft break on very long tokens */
+p, li, span, a {
+  overflow-wrap: break-word;
+}
+
+/* Flex/Grid children: prevent them from overflowing the container */
+.flex > *,
+[class*="flex-"] {
+  min-width: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ─── Smooth scroll for anchor links ─── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ─── WhatsApp FAB pulse ─── */
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.45); }
+  50% { box-shadow: 0 0 0 14px rgba(34, 197, 94, 0); }
+}
+.wa-pulse {
+  animation: wa-pulse 2.2s ease-in-out infinite;
+}

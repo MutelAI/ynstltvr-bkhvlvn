@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- SEO meta tags are dynamically set by the app from business.json -->
+    <title>Business Website</title>
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="theme-color" content="#1d4ed8" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <!-- Preload business data (starts in parallel with JS bundle) -->
+    <script>
+      // Start fetching JSON immediately — before React even loads
+      window.__bizData = fetch('/data/business.json?t=' + Date.now()).then(r => r.json());
+      // Check for edit-mode token in query params (zero-cost for regular users)
+      window.__editToken = new URLSearchParams(location.search).get('edit');
+    </script>
+
+    <!-- Google Fonts (non-render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Inter:wght@300;400;500;700;900&display=swap" as="style" />
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet" /></noscript>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
